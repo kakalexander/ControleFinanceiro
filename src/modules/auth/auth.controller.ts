@@ -9,12 +9,12 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @UseGuards(LocalAuthGuard)
-  @Post('login')
+  @Post('login')  // Rota definida como 'auth/login'
   async login(@Request() req) {
     return this.authService.login(req.user);
   }
 
-  @Post('register')
+  @Post('register')  // Rota definida como 'auth/register'
   async register(@Body() createUserDto) {
     return this.authService.register(createUserDto);
   }

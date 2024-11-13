@@ -45,10 +45,10 @@ export class AuthService {
     async login(user: any) {
         const payload = { username: user.username, sub: user._id };
         return {
-            message: 'Login efetuado',  // Mensagem de sucesso
-            access_token: this.jwtService.sign(payload), // Retorno do token
+          message: 'Login efetuado',  // Mensagem de sucesso
+          access_token: this.jwtService.sign(payload), // Retorno do token
         };
-    }
+      }
 
     async register(user: any) {
         const hashedPassword = await bcrypt.hash(user.password, 10);
